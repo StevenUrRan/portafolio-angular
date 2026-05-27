@@ -1,0 +1,39 @@
+/* ==================== SECCIONES CON COLORES FUERTES ==================== */
+
+.projects-section {
+  background: linear-gradient(180deg, #18181b 0%, #09090b 100%);
+}
+
+.projects-section h2 {
+  color: white;
+}
+
+.projects-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -14px;
+  left: 0;
+  width: 70px;
+  height: 3px;
+  background: #fff;
+}
+
+/* Efecto hover más premium en proyectos */
+app-home-proyect .group {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+app-home-proyect .group:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+}
+
+/* Footer fuerte */
+app-home-component-footer {
+  background: #0a0a0a;
+}
+
+/* Opcional: Hero con color fuerte (si quieres) */
+app-home-component-hero {
+  background: linear-gradient(to bottom, #f8f8f8, #e5e5e5);
+}
