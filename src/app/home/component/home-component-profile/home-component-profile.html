@@ -1,0 +1,60 @@
+<section class="hero-section" id="home">
+  <div class="hero-container">
+    <div class="hero-copy">
+      <span class="hero-kicker">Steven Urieles Rangel</span>
+
+      <h1 class="hero-title">
+        Java &
+        <span>Angular</span>
+        Developer
+      </h1>
+
+      <p class="hero-description">
+        Desarrollo aplicaciones web con backend robusto, frontend claro y una
+        base tecnica preparada para crecer sin perder simplicidad.
+      </p>
+
+      <div class="hero-stats" aria-label="Resumen tecnico">
+        @for (stat of stats; track stat.label) {
+          <div class="stat-item">
+            <strong>{{ stat.value }}</strong>
+            <span>{{ stat.label }}</span>
+          </div>
+        }
+      </div>
+
+      <div class="hero-buttons">
+        <a href="#proyectos-seccion" class="btn btn-primary">Ver proyectos</a>
+        <a href="#contacto-seccion" class="btn btn-secondary">Contactar</a>
+      </div>
+    </div>
+
+    <div class="hero-panel" aria-label="Resumen profesional">
+      <div class="profile-badge">
+        <span class="profile-initials">SR</span>
+        <div>
+          <strong>Disponible para colaborar</strong>
+          <small>Bogota, Colombia</small>
+        </div>
+      </div>
+
+      <div class="profile-stack">
+        <span>Stack principal</span>
+        <strong>Spring Boot + Angular</strong>
+        <p>Java, TypeScript, PostgreSQL, Docker y arquitectura por componentes.</p>
+      </div>
+
+      <div class="highlight-list">
+        @for (item of highlights; track item.number) {
+          <article class="highlight-card">
+            <span>{{ item.number }}</span>
+            <div>
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.description }}</p>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </div>
+</section>

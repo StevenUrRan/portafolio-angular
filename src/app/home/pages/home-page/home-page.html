@@ -1,18 +1,16 @@
-<div class="flex flex-col min-h-screen bg-white">
+<div class="app-shell">
   <app-home-component-header />
 
-  <main class="flex-grow">
-    <app-home-component-hero />
-    
+  <main class="app-main">
+    <app-home-component-profile />
+    <app-home-component-technology />
     <router-outlet />
 
-    <div class="h-px bg-gradient-to-r from-transparent via-zinc-300 to-transparent"></div>
-
-    <div class="w-full my-8">
+    <div class="section-divider" aria-hidden="true"></div>
+    <section id="contacto-seccion">
       <app-home-component-forms />
-    </div>
-
-    <div class="h-px bg-gradient-to-r from-transparent via-zinc-300 to-transparent"></div>
+    </section>
+    <div class="section-divider" aria-hidden="true"></div>
   </main>
 
   <app-home-component-footer />
