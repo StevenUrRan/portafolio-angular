@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  nameHeader: '|STEVEN URIELES RANGEL',
+  nameHeader: 'STEVEN URIELES RANGEL',
   hero: 'JAVA &',
   hero1: 'ANGULAR',
   hero2: 'DEVELOPER',

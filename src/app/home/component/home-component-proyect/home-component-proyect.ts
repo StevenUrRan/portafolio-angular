@@ -41,6 +41,7 @@ export default class HomeComponentProyect {
       title: 'Portafolio personal',
       description: 'Conoce las tecnologias, y conocimientos de desarrollo',
       stack: ['Angular', 'TypeScript', 'API'],
+      liveUrl: 'https://portafolio-dem-steven.netlify.app',
       repoUrl: 'https://github.com/StevenUrRan/portafolio-angular.git',
     },
   ];
