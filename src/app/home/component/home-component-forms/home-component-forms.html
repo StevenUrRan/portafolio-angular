@@ -1,49 +1,36 @@
 <div class="contact-section">
-  
-  <!-- TÍTULO PRINCIPAL ARRIBA DE TODO -->
-  <h1 class="section-title">Get in Touch</h1>
+  <div class="contact-shell">
+    <div class="contact-copy">
+      <span>Contacto</span>
+      <h2>Hablemos de tu proximo proyecto</h2>
+      <p>
+        Estoy abierto a colaborar en productos web, APIs, automatizaciones o
+        mejoras de arquitectura con Java y Angular.
+      </p>
 
-  <div class="contact-layout">
-
-    <!-- CONTENEDOR IZQUIERDO: Detalles -->
-    <div class="left-container">
-      <div class="contact-info">
-        <h2>Let's Talk</h2>
-        <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
-        
-        <div class="info-details">
-          <p><strong>Location:</strong> Bogota, Colombia</p>
-          <p><strong>Email:</strong> contact@yourdomain.com</p>
-        </div>
+      <div class="contact-details">
+        <a href="mailto:stevenurieles@gmail.com">stevenurieles@gmail.com</a>
+        <small>Bogota, Colombia</small>
       </div>
     </div>
 
-    <!-- CONTENEDOR DERECHO: Tu Tarjeta (.card) -->
-    <div class="right-container">
-      <div class="card">
-        <a class="singup">Contact Us</a>
-        
-        <!-- Input: Full Name -->
-        <div class="inputBox">
-          <input type="text" required="required" name="name">
-          <span>Full Name</span>
-        </div>
+    <form class="contact-form">
+      <label>
+        <span>Nombre</span>
+        <input type="text" name="name" placeholder="Tu nombre" />
+      </label>
 
-        <!-- Input: Email -->
-        <div class="inputBox1">
-          <input type="text" required="required" name="email">
-          <span class="user">Email</span>
-        </div>
+      <label>
+        <span>Email</span>
+        <input type="email" name="email" placeholder="correo@dominio.com" />
+      </label>
 
-        <!-- Input: Message -->
-        <div class="inputBox">
-          <input type="text" required="required" name="message">
-          <span>Message</span>
-        </div>
+      <label>
+        <span>Mensaje</span>
+        <textarea name="message" rows="5" placeholder="Cuentame que necesitas"></textarea>
+      </label>
 
-        <button class="enter">Enter</button>
-      </div>
-    </div>
-
+      <button type="submit">Enviar mensaje</button>
+    </form>
   </div>
 </div>
