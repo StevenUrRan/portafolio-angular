@@ -1,6 +1,8 @@
 export interface HomeProyectInterfaces {
   img: string;
   title: string;
-  route: string;
   description: string;
+  stack: string[];
+  liveUrl?: string;
+  repoUrl?: string;
 }

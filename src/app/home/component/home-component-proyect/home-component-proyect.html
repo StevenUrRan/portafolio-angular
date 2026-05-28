@@ -1,65 +1,41 @@
-  <section id="proyectos-seccion" class="min-h-screen px-4 pb-20">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24 max-w-7xl mx-auto">
+<div class="project-grid">
+  @for (item of homeProjects; track item.title) {
+    <article class="project-card">
+      <a class="project-media" [href]="item.repoUrl || '#'" target="_blank" rel="noreferrer">
+        <img [src]="item.img" [alt]="item.title" loading="lazy" />
+      </a>
 
-      @for (item of homeProoyect; track item.route) {
-        <div class="flex flex-col h-full">
-          <a [routerLink]="item.route" class="block group flex-grow">
-            
-            <!-- CONTENEDOR DE IMAGEN -->
-            <div class="overflow-hidden mb-6 aspect-[3/4] relative">
-              <img
-                [src]="item.img"
-                class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out grayscale group-hover:grayscale-0"
-                alt="{{ item.title }}"
-              />
-              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition"></div>
-            </div>
-            
-            <!-- BLOQUE DE TEXTOS (Evita que el botón se encime) -->
-            <div class="flex flex-col gap-2 mb-6">
-              <h2 class="display-font text-4xl font-bold text-black dark:text-white transition-colors">
-                {{ item.title }}
-              </h2>
-              <p class="text-gray-500 text-sm uppercase tracking-widest font-medium">
-                {{ item.description }}
-              </p>
-            </div>
+      <div class="project-content">
+        <div>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </div>
 
+        <div class="project-stack" aria-label="Tecnologias del proyecto">
+          @for (tech of item.stack; track tech) {
+            <span>{{ tech }}</span>
+          }
+        </div>
+
+        <div class="project-actions">
+          <a
+            class="project-link project-link--primary"
+            [class.project-link--disabled]="!item.liveUrl"
+            [href]="item.liveUrl || null"
+            [attr.target]="item.liveUrl ? '_blank' : null"
+            [attr.rel]="item.liveUrl ? 'noreferrer' : null"
+            [attr.aria-disabled]="!item.liveUrl"
+          >
+            Live Demo
           </a>
 
-          
-          <div class="mt-auto pt-4 flex flex-row items-center gap-4">
-            <button
-              type="submit"
-              class="flex justify-center gap-2 items-center shadow-xl text-sm bg-gray-50 backdrop-blur-md font-bold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-emerald-500 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 h-10 overflow-hidden border-2 rounded-full group transition-transform duration-200 hover:scale-105 active:scale-95 cursor-pointer text-black"
-            >
-              Live Demon
-              <svg
-                class="w-5 h-5 justify-end group-hover:rotate-90 bg-transparent ease-linear duration-300 rounded-full border border-black p-1 rotate-45 text-black stroke-black"
-                viewBox="0 0 16 19"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
-                  class="fill-black"
-                ></path>
-              </svg>
-            </button>
-
-            <button
-              class="items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-transform duration-200 disabled:pointer-events-none disabled:opacity-50 group/btn relative animate-rainbow cursor-pointer border-0 bg-[linear-gradient(#fff,#fff),linear-gradient(#fff_50%,rgba(255,255,255,0.6)_80%,rgba(0,0,0,0)),linear-gradient(90deg,hsl(0,100%,63%),hsl(90,100%,63%),hsl(210,100%,63%),hsl(195,100%,63%),hsl(270,100%,63%))] bg-[length:200%] [background-clip:padding-box,border-box,border-box] [background-origin:border-box] [border:calc(0.08*1rem)_solid_transparent] before:absolute before:bottom-[-20%] before:left-1/2 before:z-[0] before:h-[20%] before:w-[60%] before:-translate-x-1/2 before:animate-rainbow before:bg-[linear-gradient(90deg,hsl(0,100%,63%),hsl(90,100%,63%),hsl(210,100%,63%),hsl(195,100%,63%),hsl(270,100%,63%))] before:[filter:blur(calc(0.8*1rem))] dark:bg-[linear-gradient(#121213,#121213),linear-gradient(#121213_50%,rgba(18,18,19,0.6)_80%,rgba(18,18,19,0)),linear-gradient(90deg,hsl(0,100%,63%),hsl(90,100%,63%),hsl(210,100%,63%),hsl(195,100%,63%),hsl(270,100%,63%))] hover:scale-105 active:scale-95 h-10 px-5 py-2 inline-flex items-center"
-            >
-              <div class="relative z-10 flex items-center gap-2 text-black dark:text-white">
-                <svg class="size-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.061.069-.061 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
-                </svg>
-                <span class="font-bold tracking-wide">GitHub</span>
-              </div>
-            </button>
-
-          </div>
+          @if (item.repoUrl) {
+            <a class="project-link" [href]="item.repoUrl" target="_blank" rel="noreferrer">
+              GitHub
+            </a>
+          }
         </div>
-      }
-
-    </div>
-  </section>
+      </div>
+    </article>
+  }
+</div>

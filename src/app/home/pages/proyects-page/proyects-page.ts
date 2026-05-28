@@ -6,4 +6,4 @@ import HomeComponentProyect from "../../component/home-component-proyect/home-co
   templateUrl: './proyects-page.html',
   styleUrl: './proyects-page.css',
 })
-export default class ProyectsPage {}
+export class ProyectsPage {}
