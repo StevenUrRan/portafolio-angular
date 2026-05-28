@@ -24,24 +24,19 @@
                 "glob": "**/*",
                 "input": "public"
               },
-                "src/assets",
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/assets"
             ],
             "styles": ["src/styles.css"],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "security": {
-              "allowedHosts": []
-            },
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            "outputMode": "static",
+            "prerender": true
           },
           "configurations": {
             "production": {
+              "optimization": {
+                "fonts": {
+                  "inline": false
+                }
+              },
               "budgets": [
                 {
                   "type": "initial",
