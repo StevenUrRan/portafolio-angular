@@ -33,25 +33,19 @@ export class HomeComponentHeader {
 
   menuItems: MenuItem[] = [
     {
-      title: 'Home',
+      title: 'Inicio',
       route: ['/home'],
-      fragment: '',
+      fragment: 'home',
       icon: 'house'
     },
     {
-      title: 'Project',
+      title: 'Proyectos',
       route: ['/home'],
       fragment: 'proyectos-seccion',
       icon: 'rocket'
     },
     {
-      title: 'About',
-      route: ['/home'],
-      fragment: 'about-seccion',
-      icon: 'user'
-    },
-    {
-      title: 'Contact',
+      title: 'Contacto',
       route: ['/home'],
       fragment: 'contacto-seccion',
       icon: 'chat'

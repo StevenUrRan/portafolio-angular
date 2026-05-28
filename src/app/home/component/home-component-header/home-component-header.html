@@ -1,31 +1,31 @@
-<!-- Navigation -->
 <nav
-  class="fixed top-0 w-full z-50 transition-all duration-300"
+  class="site-header"
   [ngClass]="{
-    'py-4 px-6 md:px-8 bg-white/70 backdrop-blur-md border-b border-gray-200/50 shadow-sm text-black': isScrolled,
-    'py-6 md:py-8 px-6 md:px-8 bg-transparent text-black': !isScrolled
+    'site-header--scrolled': isScrolled,
+    'site-header--open': isMenuOpen
   }"
 >
-  <div class="flex justify-between items-center relative z-50">
-    <a
-      [routerLink]="['/home']"
-      routerLinkActive="active"
-      class="display-font text-2xl font-bold tracking-tighter hover:opacity-70 transition-all duration-300 text-black active:scale-110 active:text-black active:tracking-tight"
-    >
-      {{ evn.nameHeader }}
+  <div class="header-inner">
+    <a class="brand" [routerLink]="['/home']" fragment="home" (click)="closeMenu()">
+      <span class="brand-mark">SR</span>
+      <span>{{ evn.nameHeader }}</span>
     </a>
 
-    <!-- Menú Desktop -->
-    <div class="menu hidden md:flex">
+    <div class="menu" [class.menu--open]="isMenuOpen">
       @for (item of menuItems; track item.title) {
-        <a [routerLink]="item.route" [fragment]="item.fragment" class="link">
+        <a
+          [routerLink]="item.route"
+          [fragment]="item.fragment"
+          class="link"
+          routerLinkActive="link--active"
+          (click)="closeMenu()"
+        >
           <span class="link-icon">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="192"
-              height="192"
               fill="currentColor"
               viewBox="0 0 256 256"
+              aria-hidden="true"
             >
               @switch (item.icon) {
                 @case ('house') {
@@ -62,26 +62,6 @@
                   ></line>
                   <path
                     d="M82.14214,197.45584,52.201,227.397a8,8,0,0,1-11.31371,0L28.603,215.11268a8,8,0,0,1,0-11.31371l29.94113-29.94112a8,8,0,0,0,0-11.31371L37.65685,141.65685a8,8,0,0,1,0-11.3137l12.6863-12.6863a8,8,0,0,1,11.3137,0l76.6863,76.6863a8,8,0,0,1,0,11.3137l-12.6863,12.6863a8,8,0,0,1-11.3137,0L93.45584,197.45584A8,8,0,0,0,82.14214,197.45584Z"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="16"
-                  ></path>
-                }
-                @case ('user') {
-                  <rect width="256" height="256" fill="none"></rect>
-                  <circle
-                    cx="128"
-                    cy="96"
-                    r="64"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-miterlimit="10"
-                    stroke-width="16"
-                  ></circle>
-                  <path
-                    d="M30.989,215.99064a112.03731,112.03731,0,0,1,194.02311.002"
                     fill="none"
                     stroke="currentColor"
                     stroke-linecap="round"
@@ -129,5 +109,12 @@
         </a>
       }
     </div>
+
+    <button class="menu-toggle" type="button" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="sr-only">Abrir menu</span>
+    </button>
   </div>
 </nav>
