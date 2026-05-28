@@ -34,6 +34,7 @@ export default class HomeComponentProyect {
       title: 'Api productos',
       description: 'Exploradory registro de productos',
       stack: ['JAVA', 'SPRING BOOT', 'API'],
+      liveUrl: 'https://spring-boot-jwt-production-api.onrender.com/swagger-ui/index.html',
       repoUrl: 'https://github.com/StevenUrRan/spring-boot-jwt-production-api-.git',
     },
     {
