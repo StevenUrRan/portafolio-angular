@@ -1,4 +1,5 @@
 # 🚀 Portafolio Angular
+https://portafolio-steven-urieles-rangel.netlify.app/
 
 A modern, **responsive** personal portfolio built with **Angular 21** and Tailwind‑CSS. The project showcases:
 
