@@ -13,6 +13,7 @@ export default class HomeComponentProyect {
       title: 'Sistema Veterinario',
       description: 'Gestion de pacientes, validaciones y flujo operativo para veterinarias.',
       stack: ['Java', 'Spring Boot', 'Angular'],
+      liveUrl: 'https://system-animals-veterinary.onrender.com/api/v1/swagger-ui/index.html',
       repoUrl: 'https://github.com/StevenUrRan/System-animals-veterinary.git',
     },
     // {
